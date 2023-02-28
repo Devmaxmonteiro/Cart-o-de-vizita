@@ -1,0 +1,20 @@
+from PIL import Image, ImageDraw, ImageFont
+
+# Cria uma nova imagem com um fundo branco e tamanho de 1000x600 pixels
+img = Image.new('RGB', (1000, 600), color='white')
+
+# Cria um objeto draw para desenhar na imagem
+draw = ImageDraw.Draw(img)
+
+# Define a fonte e o tamanho do texto
+font = ImageFont.truetype('arial.ttf', size=50)
+
+# Adiciona o texto do cartão de visita
+draw.text((100, 100), 'Seu Nome', fill='black', font=font)
+draw.text((100, 200), 'Seu Cargo', fill='black', font=font)
+draw.text((100, 300), 'Seu Endereço', fill='black', font=font)
+draw.text((100, 400), 'Seu E-mail', fill='black', font=font)
+draw.text((100, 500), 'Seu Número de Telefone', fill='black', font=font)
+
+# Salva a imagem como um arquivo PNG
+img.save('cartao_de_visita.png')
